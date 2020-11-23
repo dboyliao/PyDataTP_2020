@@ -7,3 +7,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-rtti")
 
 add_subdirectory(submodules/uTensor/src)
 add_subdirectory(hello_world)
+add_subdirectory(error_handling)
