@@ -13,6 +13,6 @@ $ cd build && cmake -DCMAKE_BUILD_TYPE=Debug ..
 $ make hello_world
 ```
 
-Run `hello_world/hello_world` under `build` directory:
+Run `1_hello_world/hello_world` under `build` directory:
 
-![hello-world](images/hello_world.png)
+![hello-world](images/hello-world.png)
