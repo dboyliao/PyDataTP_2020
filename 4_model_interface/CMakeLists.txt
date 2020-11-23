@@ -1,0 +1,3 @@
+add_executable(model_interface model_interface.cpp)
+target_include_directories(model_interface PRIVATE utensor_core utensor)
+target_link_libraries(model_interface utensor_core utensor)
