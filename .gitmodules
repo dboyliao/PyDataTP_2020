@@ -1,0 +1,4 @@
+[submodule "submodules/uTensor"]
+	path = submodules/uTensor
+	url = https://github.com/uTensor/uTensor.git
+	branch = develop
