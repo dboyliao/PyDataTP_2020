@@ -2,7 +2,7 @@
 
 using namespace uTensor;
 
-const int32_t msg_codes[] = {72, 101, 108, 108, 111, 44,
+const uint8_t msg_codes[] = {72, 101, 108, 108, 111, 44,
                              32, 119, 111, 114, 108, 100};
 const uint16_t num_codes = sizeof(msg_codes) / sizeof(msg_codes[0]);
 static localCircularArenaAllocator<512> meta_alloc;
@@ -16,10 +16,10 @@ int main(int argc, const char **argv) {
   Context::get_default_context()->set_ram_data_allocator(&ram_alloc);
   // setup error handler
   Context::get_default_context()->set_ErrorHandler(&error_handler);
-  Tensor msg_tensor = new RomTensor({num_codes}, i32, msg_codes);
+  Tensor msg_tensor = new RomTensor({num_codes}, u8, msg_codes);
   printf("Reading rom tensor: ");
   for (int i = 0; i < num_codes; ++i) {
-    int32_t code = static_cast<int32_t>(msg_tensor(i));
+    uint8_t code = static_cast<uint8_t>(msg_tensor(i));
     char c = static_cast<char>(code);
     printf("%c", c);
   }
@@ -31,7 +31,7 @@ int main(int argc, const char **argv) {
   }
   printf("Reading ram tensor: ");
   for (int i = 0; i < num_codes; ++i) {
-    int32_t code = static_cast<int32_t>(ram_msg_tensor(i));
+    uint8_t code = static_cast<uint8_t>(ram_msg_tensor(i));
     char c = static_cast<char>(code);
     printf("%c", c);
   }

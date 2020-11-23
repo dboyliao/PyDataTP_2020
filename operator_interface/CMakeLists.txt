@@ -1,0 +1,3 @@
+add_executable(operator_interface operator_interface.cpp)
+target_link_libraries(operator_interface utensor_core utensor)
+target_include_directories(operator_interface PRIVATE utensor_core utensor)

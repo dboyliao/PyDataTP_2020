@@ -1,3 +1,3 @@
 add_executable(hello_world hello_world.cpp)
 target_link_libraries(hello_world utensor_core utensor)
-target_include_directories(hello_world INTERFACE utensor_core utensor)
+target_include_directories(hello_world PRIVATE utensor_core utensor)
