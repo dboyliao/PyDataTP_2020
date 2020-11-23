@@ -5,7 +5,6 @@ using namespace uTensor;
 
 const uint8_t msg_codes[] = {72, 101, 108, 108, 111, 44,
                              32, 119, 111, 114, 108, 100};
-const uint16_t num_codes = sizeof(msg_codes) / sizeof(msg_codes[0]);
 
 class ASCIIPrintOperator : public OperatorInterface<1, 0> {
  public:
