@@ -13,6 +13,11 @@ $ cd build && cmake -DCMAKE_BUILD_TYPE=Debug ..
 $ make hello_world
 ```
 
-Run `1_hello_world/hello_world` under `build` directory:
+Run `./bin/hello_world` under `build` directory:
 
-![hello-world](images/hello-world.png)
+```bash
+# under build directory
+$ ./bin/hello_world
+Reading rom tensor: Hello, world
+Reading ram tensor: Hello, world
+```
