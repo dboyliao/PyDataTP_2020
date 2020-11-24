@@ -7,6 +7,4 @@ verify_ssl = true
 
 [packages]
 utensor-cgen = {editable = true, path = "./../submodules/utensor_cgen"}
-
-[requires]
-python_version = "3.7"
+mbed-cli = "*"
