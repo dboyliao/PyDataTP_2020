@@ -3,7 +3,7 @@
 - [`mbed-cli`](https://os.mbed.com/docs/mbed-os/v6.4/build-tools/install-and-set-up.html): build tool for `mbed`
 - [`utensor_cgen`](https://github.com/uTensor/utensor_cgen)
 
-If you use [`pipenv`](https://github.com/pypa/pipenv), you can setup the environment by running `pipenv install`
+If you use [`pipenv`](https://github.com/pypa/pipenv), you can setup the environment by running `pipenv install` or `pip install -r requirements.txt` otherwise.
 
 # Compilation
 
