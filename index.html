@@ -16,7 +16,7 @@
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/beige.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -13619,8 +13619,8 @@ sequential_1/conv2d_5/Relu__StatefulPartitionedCall/sequential_1/conv2d_5/Relu__
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To implement an operator, you must</p>
 <ol>
-<li>inheritant from <code>OperatorInterface</code> and specify the number of inputs/outputs</li>
-<li>add implementation to <code>void compute()</code></li>
+<li>inherent from <code>OperatorInterface</code> and specify the number of inputs/outputs</li>
+<li>overwrite <code>void compute()</code></li>
 </ol>
 
 </div>
@@ -13639,7 +13639,7 @@ sequential_1/conv2d_5/Relu__StatefulPartitionedCall/sequential_1/conv2d_5/Relu__
   <span class="p">...</span>
 
  <span class="k">protected</span><span class="o">:</span>
-  <span class="c1">// compute() will be invoked once the op is evaluated</span>
+  <span class="c1">// compute() will be invoked once the operator is evaluated</span>
   <span class="kt">void</span> <span class="n">compute</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// retrieve tensor by its name</span>
     <span class="n">Tensor</span> <span class="o">&amp;</span><span class="n">msg_tensor</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="n">msg</span><span class="p">].</span><span class="n">tensor</span><span class="p">();</span>
