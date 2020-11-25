@@ -41,7 +41,7 @@ class MyModel : public ModelInterface<1, 1> {
  private:
   ASCIIPrintOperator _print_op;
   ReferenceOperators::AddOperator<uint8_t> _add_op;
-  // allocators which control the total memory consumption of a model
+  // private memory allocator, which controls total memory consumption of a model
   localCircularArenaAllocator<256> meta_alloc;
   localCircularArenaAllocator<256> ram_alloc;
 
