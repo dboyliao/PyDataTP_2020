@@ -1,0 +1,29 @@
+.rendered_html h1,
+.rendered_html h2,
+.rendered_html h3 {
+  color: rgb(79, 85, 161);
+  margin-bottom: 1em;
+}
+.reveal pre {
+  margin-top: 1.5em;
+}
+div.backgrounds {
+  background-color: rgba(36, 59, 36, 0.288);
+}
+.rendered_html p {
+  color: rgba(35, 56, 82, 0.74);
+  font-size: 26px;
+}
+.reveal li {
+  font-size: 28px;
+  color: rgba(35, 56, 82, 0.74);
+  margin: 10px;
+}
+.reveal ul {
+  font-size: 28px;
+  color: rgba(35, 56, 82, 0.74);
+}
+.reveal a {
+    color: rgba(150, 137, 19, 0.904);
+}
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/night.css"); */
