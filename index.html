@@ -13230,7 +13230,79 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/outer-skeleton.png" alt="outer-skeleton"></p>
+<h2 id="Where-the-Journey-Started,-Outer-Skeleton">Where the Journey Started, Outer Skeleton<a class="anchor-link" href="#Where-the-Journey-Started,-Outer-Skeleton">&#182;</a></h2><p><img src="images/outer-skeleton.png" alt="outer-skeleton"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-We-Want">What We Want<a class="anchor-link" href="#What-We-Want">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>A smart sensor other than hand-crafted one</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Adaptive, customizable</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Runs on low-powered devices</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>User friendly and easy to debug</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By the time being, Deep Neural Network technology seems to be our best bet. (Maybe?)</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tensorflow-Lite-Micro">Tensorflow Lite Micro<a class="anchor-link" href="#Tensorflow-Lite-Micro">&#182;</a></h2><p><img src="images/tensorflow-logo.svg" alt="tensorflow-logo"></p>
+<ul>
+<li><a href="https://www.tensorflow.org/lite/microcontrollers">documentation</a></li>
+<li>Interpretor based<ul>
+<li>model is represented as an array of bytecodes (<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/hello_world/model.cc#L28-L237">example</a>)</li>
+<li><code>tflite::MicroInterpreter</code> carry out the output values with the bytecodes (<a href="https://www.tensorflow.org/lite/microcontrollers/get_started">tutorial</a>)</li>
+<li>Tensorflow Lite Micro only</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -13246,7 +13318,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="utensor_cgen:-code-generator-for-uTensor"><code>utensor_cgen</code>: code generator for <code>uTensor</code><a class="anchor-link" href="#utensor_cgen:-code-generator-for-uTensor">&#182;</a></h2><p><img src="images/utensor-cli-components.drawio.svg" alt="utensor-cgen"></p>
+<h2 id="utensor_cgen:-Code-Generator-for-uTensor"><code>utensor_cgen</code>: Code Generator for <code>uTensor</code><a class="anchor-link" href="#utensor_cgen:-Code-Generator-for-uTensor">&#182;</a></h2><p><img src="images/utensor-cli-components.drawio.svg" alt="utensor-cgen"></p>
 
 </div>
 </div>
@@ -13262,11 +13334,20 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Before we move on how to extend <code>utensor-cli</code>, we need to understand how <code>uTensor</code> runtime works.</p>
+<h2 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h2><p>Before we move on to how to extend <code>utensor-cli</code>, we need to understand how <code>uTensor</code> runtime works.</p>
+<p>We'll go through following tutorials</p>
+<ol>
+<li>Hello World</li>
+<li>Error Handling</li>
+<li>Operator Interface</li>
+<li>Model Interface</li>
+<li>End-to-End Deployment</li>
+</ol>
+<p>And finally, write a simple plugin/extension for <code>utensor-cli</code></p>
 
 </div>
 </div>
@@ -13383,12 +13464,14 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">utensor_cgen.frontend.tflite</span> <span class="kn">import</span> <span class="n">TFLiteParser</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">utensor_cgen.logger</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">utensor_cgen.frontend.tflite</span> <span class="kn">import</span> <span class="n">TFLiteParser</span>
 <span class="kn">from</span> <span class="nn">utensor_cgen.backend.graph_lower.generic_graph_lower</span> <span class="kn">import</span> <span class="n">TensorAllocationPlanner</span>
 
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s2">&quot;ERROR&quot;</span><span class="p">)</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">TFLiteParser</span><span class="p">({})</span>
 <span class="n">planner</span> <span class="o">=</span> <span class="n">TensorAllocationPlanner</span><span class="p">({})</span>
@@ -13405,7 +13488,8 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">planner</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">ugraph</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
+<span class="n">planner</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">ugraph</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13423,10 +13507,10 @@ a.anchor-link {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[INFO generic_graph_lower.py apply @ 56] topo ordered tensor life span analysis done
-[INFO utils.py wrapped @ 469] collapsed time of calling apply: 0.0036 seconds
+[INFO utils.py wrapped @ 469] collapsed time of calling apply: 0.0044 seconds
 [INFO generic_graph_lower.py _solve_space_alloc @ 204] optimal tensor allocation plan solved, total memory required: 172544 bytes
 [INFO generic_graph_lower.py _solve_space_alloc @ 205] number of tensors allocated: 24
-[INFO utils.py wrapped @ 469] collapsed time of calling _solve_space_alloc: 0.0177 seconds
+[INFO utils.py wrapped @ 469] collapsed time of calling _solve_space_alloc: 0.0147 seconds
 </pre>
 </div>
 </div>
@@ -13895,7 +13979,7 @@ sequential_1/conv2d_5/Relu__StatefulPartitionedCall/sequential_1/conv2d_5/Relu__
 
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13904,11 +13988,12 @@ sequential_1/conv2d_5/Relu__StatefulPartitionedCall/sequential_1/conv2d_5/Relu__
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="utensor_cgen-Plugin"><code>utensor_cgen</code> Plugin<a class="anchor-link" href="#utensor_cgen-Plugin">&#182;</a></h1><p><a href="https://github.com/uTensor/utensor_cgen/tree/master/tutorials/component_registration">component_registration</a></p>
+<p><img src="images/utensor-cli-components.drawio.svg" alt="utensor-cli-components"></p>
 
 </div>
 </div>
