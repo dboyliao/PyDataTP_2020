@@ -19,8 +19,9 @@ int argmax(const Tensor &logits) {
   return max_index;
 }
 
+SimpleCnn model;
+
 int main(int argc, const char **argv) {
-  static SimpleCnn model;
   printf("Simple CNN Demo\n");
   for (uint32_t i = 0; i < 2; ++i) {
     Tensor in_img = new RomTensor({1, 32, 32, 3}, flt, arr_images[i]);
