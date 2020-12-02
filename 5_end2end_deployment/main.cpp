@@ -20,10 +20,14 @@ int argmax(const Tensor &logits) {
 }
 
 SimpleCnn model;
+static localCircularArenaAllocator<128> meta_alloc;
+static localCircularArenaAllocator<128> ram_alloc;
 
 int main(int argc, const char **argv) {
   printf("Simple CNN Demo\n");
   for (uint32_t i = 0; i < 2; ++i) {
+    Context::get_default_context()->set_metadata_allocator(&meta_alloc);
+    Context::get_default_context()->set_ram_data_allocator(&ram_alloc);
     Tensor in_img = new RomTensor({1, 32, 32, 3}, flt, arr_images[i]);
     Tensor logits = new RamTensor({1, 10}, flt);
     model.set_inputs({{SimpleCnn::input_0, in_img}})
@@ -31,6 +35,8 @@ int main(int argc, const char **argv) {
         .eval();
     int pred_idx = argmax(logits);
     printf("It's a %s\n", labels[pred_idx]);
+    Context::get_default_context()->set_metadata_allocator(&meta_alloc);
+    Context::get_default_context()->set_ram_data_allocator(&ram_alloc);
   }
   printf("No, it's SUPERMAN!!\n");
   return 0;

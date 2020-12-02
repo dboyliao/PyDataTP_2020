@@ -14,5 +14,8 @@ int main(int argc, const char **argv) {
   mymodel.set_inputs({{MyModel::msg, msg}})
       .set_outputs({{MyModel::output, output}})
       .eval();
+  // switch back to user space allocators
+  Context::get_default_context()->set_metadata_allocator(&meta_alloc);
+  Context::get_default_context()->set_ram_data_allocator(&ram_alloc);
   return 0;
 }
